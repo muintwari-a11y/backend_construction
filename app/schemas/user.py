@@ -1,8 +1,11 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class UserBase(BaseModel):
     email: str
+    name: Optional[str] = None
     role: str = "user"
+    staff_id: Optional[str] = None
 
 class UserCreate(UserBase):
     password: str

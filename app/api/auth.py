@@ -4,7 +4,8 @@ from app.core.database import get_db
 from app.core.security import verify_password, get_password_hash, create_access_token, decode_token
 from app.models.user import User
 from app.schemas.auth import UserLogin, Token, RefreshToken
-from app.schemas.user import UserCreate
+from app.schemas.user import UserCreate, User as UserSchema
+from app.api.deps import get_current_active_user
 
 router = APIRouter()
 
@@ -22,12 +23,16 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     if db_user:
         raise HTTPException(status_code=400, detail="Email already registered")
     hashed_password = get_password_hash(user.password)
-    new_user = User(email=user.email, password_hash=hashed_password, role=user.role)
+    new_user = User(email=user.email, password_hash=hashed_password, role=user.role, name=user.name, staff_id=user.staff_id)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
     access_token = create_access_token(data={"sub": new_user.email})
     return {"access_token": access_token, "token_type": "bearer"}
+
+@router.get("/me", response_model=UserSchema)
+def get_current_user(current_user: User = Depends(get_current_active_user)):
+    return current_user
 
 @router.post("/refresh", response_model=Token)
 def refresh_token(refresh: RefreshToken):

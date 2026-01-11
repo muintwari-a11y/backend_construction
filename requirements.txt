@@ -5,3 +5,6 @@ alembic
 passlib[bcrypt]
 python-jose[cryptography]
 python-decouple
+python-multipart
+email-validator
+httpx
