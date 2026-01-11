@@ -13,7 +13,7 @@ class Settings:
     SMTP_PORT: int = config("SMTP_PORT", default=587, cast=int)
     SMTP_USERNAME: str = config("SMTP_USERNAME", default="")
     SMTP_PASSWORD: str = config("SMTP_PASSWORD", default="")
-    EMAIL_FROM: str = config("EMAIL_FROM", default="noreply@goconstructionltd.com")
+    EMAIL_FROM: str = config("EMAIL_FROM", default="it@goconstructionltd.com")
     EMAIL_TO: str = config("EMAIL_TO", default="it@goconstructionltd.com")
 
 settings = Settings()

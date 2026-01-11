@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import create_tables
-from app.api import auth, users, dashboard, health, company, projects, transactions, contact
+from app.api import auth, users, dashboard, health, company, projects, transactions, contact, messages
 
 app = FastAPI(title="Go Construction API", version="1.0.0")
 
@@ -22,6 +22,7 @@ app.include_router(company.router, prefix="/company", tags=["company"])
 app.include_router(projects.router, prefix="/projects", tags=["projects"])
 app.include_router(transactions.router, prefix="/transactions", tags=["transactions"])
 app.include_router(contact.router, prefix="/contact", tags=["contact"])
+app.include_router(messages.router, prefix="/messages", tags=["messages"])
 
 @app.get("/health")
 async def health_check():

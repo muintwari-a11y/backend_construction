@@ -16,5 +16,6 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # Relationships
-    projects = relationship("Project", back_populates="created_by")
+    projects = relationship("Project", back_populates="created_by", foreign_keys="Project.created_by_id")
+    client_projects = relationship("Project", back_populates="client", foreign_keys="Project.client_id")
     transactions = relationship("Transaction", back_populates="created_by")

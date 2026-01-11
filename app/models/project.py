@@ -16,10 +16,13 @@ class Project(Base):
     budget = Column(Float)
     location = Column(String)
     client_name = Column(String)
+    client_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
     # Relationships
     created_by_id = Column(Integer, ForeignKey("users.id"))
     created_by = relationship("User", back_populates="projects")
+    client = relationship("User", foreign_keys=[client_id])
     transactions = relationship("Transaction", back_populates="project")
+    messages = relationship("Message", back_populates="project")

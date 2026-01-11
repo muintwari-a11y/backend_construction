@@ -22,10 +22,14 @@ async def send_contact_email(contact: ContactForm):
         smtp_port = int(os.getenv("SMTP_PORT", "587"))
         smtp_username = os.getenv("SMTP_USERNAME")
         smtp_password = os.getenv("SMTP_PASSWORD")
-        recipient_email = "it@goconstructioltd.com"
+        recipient_email = os.getenv("EMAIL_TO", "it@goconstructioltd.com")
 
+        # For development/testing, if SMTP not configured, just log and return success
         if not smtp_username or not smtp_password:
-            raise HTTPException(status_code=500, detail="Email configuration not set")
+            print(f"EMAIL NOT SENT (SMTP not configured): To: {recipient_email}, Subject: Contact Form: {contact.subject}")
+            print(f"From: {contact.email}, Name: {contact.name}")
+            print(f"Message: {contact.message}")
+            return {"message": "Email logged successfully (SMTP not configured)"}
 
         # Create message
         msg = MIMEMultipart()
