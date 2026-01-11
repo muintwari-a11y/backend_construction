@@ -1,0 +1,191 @@
+[
+  {
+    "id": "chairman",
+    "email": "chairman@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Nkurunziza Gilbert",
+    "role": "admin",
+    "staff_id": "chairman",
+    "is_active": true
+  },
+  {
+    "id": "md",
+    "email": "md@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Nsengimana Olivier",
+    "role": "admin",
+    "staff_id": "md",
+    "is_active": true
+  },
+  {
+    "id": "td",
+    "email": "td@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Izere Aime Bruce",
+    "role": "admin",
+    "staff_id": "td",
+    "is_active": true
+  },
+  {
+    "id": "ad",
+    "email": "ad@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Nkurikiyintwari Donath",
+    "role": "financial",
+    "staff_id": "ad",
+    "is_active": true
+  },
+  {
+    "id": "accountant",
+    "email": "accountant@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Tuyishimire Divine",
+    "role": "financial",
+    "staff_id": "accountant",
+    "is_active": true
+  },
+  {
+    "id": "qe",
+    "email": "qe@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Mbarushimana Tharcisse",
+    "role": "staff",
+    "staff_id": "qe",
+    "is_active": true
+  },
+  {
+    "id": "pm",
+    "email": "pm@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Manzi Bizimungu Aubin",
+    "role": "staff",
+    "staff_id": "pm",
+    "is_active": true
+  },
+  {
+    "id": "arch",
+    "email": "arch@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Niyonsenga Roger",
+    "role": "staff",
+    "staff_id": "arch",
+    "is_active": true
+  },
+  {
+    "id": "qs",
+    "email": "qs@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Ineza Robert",
+    "role": "staff",
+    "staff_id": "qs",
+    "is_active": true
+  },
+  {
+    "id": "water",
+    "email": "water@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Tuyizere Alexandre",
+    "role": "staff",
+    "staff_id": "water",
+    "is_active": true
+  },
+  {
+    "id": "geo",
+    "email": "geo@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Nshimyimana Aime Valantin",
+    "role": "staff",
+    "staff_id": "geo",
+    "is_active": true
+  },
+  {
+    "id": "env",
+    "email": "env@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Manzi Malyse",
+    "role": "staff",
+    "staff_id": "env",
+    "is_active": true
+  },
+  {
+    "id": "ele",
+    "email": "ele@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Maitre Eng. Mugemana Miguel",
+    "role": "staff",
+    "staff_id": "ele",
+    "is_active": true
+  },
+  {
+    "id": "it1",
+    "email": "it@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "IT. Mugenga Ntwari Olivier",
+    "role": "admin",
+    "staff_id": "it1",
+    "is_active": true
+  },
+  {
+    "id": "media",
+    "email": "media@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "IT. Nayituriki Olivier",
+    "role": "staff",
+    "staff_id": "media",
+    "is_active": true
+  },
+  {
+    "id": "eng1",
+    "email": "eng1@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Ndatimana Regis",
+    "role": "staff",
+    "staff_id": "eng1",
+    "is_active": true
+  },
+  {
+    "id": "eng2",
+    "email": "eng2@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Dukundane Anselme",
+    "role": "staff",
+    "staff_id": "eng2",
+    "is_active": true
+  },
+  {
+    "id": "eng3",
+    "email": "eng3@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Impano Aime Fiacre",
+    "role": "staff",
+    "staff_id": "eng3",
+    "is_active": true
+  },
+  {
+    "id": "eng4",
+    "email": "eng4@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Kandangira Hubert",
+    "role": "staff",
+    "staff_id": "eng4",
+    "is_active": true
+  },
+  {
+    "id": "eng5",
+    "email": "eng5@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Maitre Eng. Mukamisha Barbara",
+    "role": "staff",
+    "staff_id": "eng5",
+    "is_active": true
+  },
+  {
+    "id": "eng6",
+    "email": "eng6@goconstruction.rw",
+    "password_hash": "staff123",
+    "name": "Eng. Nyabyenda Paulin",
+    "role": "staff",
+    "staff_id": "eng6",
+    "is_active": true
+  }
+]
