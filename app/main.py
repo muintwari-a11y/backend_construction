@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.core.database import create_tables
 from app.api import auth, users, dashboard, health, company, projects, transactions, contact, messages
 
 app = FastAPI(title="Go Construction API", version="1.0.0")
@@ -28,9 +27,7 @@ app.include_router(messages.router, prefix="/messages", tags=["messages"])
 async def health_check():
     return {"status": "healthy"}
 
-@app.on_event("startup")
-def startup_event():
-    create_tables()
+# No startup event needed for JSON-based backend
 
 if __name__ == "__main__":
     import os
