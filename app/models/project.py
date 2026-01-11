@@ -22,7 +22,7 @@ class Project(Base):
 
     # Relationships
     created_by_id = Column(Integer, ForeignKey("users.id"))
-    created_by = relationship("User", back_populates="projects")
-    client = relationship("User", foreign_keys=[client_id])
+    created_by = relationship("User", back_populates="projects", foreign_keys=[created_by_id])
+    client = relationship("User", back_populates="client_projects", foreign_keys=[client_id])
     transactions = relationship("Transaction", back_populates="project")
     messages = relationship("Message", back_populates="project")
