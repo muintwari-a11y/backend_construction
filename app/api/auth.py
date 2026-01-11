@@ -26,8 +26,30 @@ def login(user_credentials: UserLogin):
 
 @router.post("/register", response_model=Token)
 def register(user: UserCreate):
-    # For demo, registration is disabled
-    raise HTTPException(status_code=400, detail="Registration is disabled for demo")
+    # Check if user already exists
+    if any(u['email'] == user.email for u in users_db):
+        raise HTTPException(status_code=400, detail="Email already registered")
+    
+    # Add new user to the list
+    new_user = {
+        "id": len(users_db) + 1,
+        "email": user.email,
+        "password_hash": "staff123",  # Simple password for demo
+        "name": user.name,
+        "role": user.role or "client",
+        "staff_id": user.staff_id,
+        "is_active": True
+    }
+    users_db.append(new_user)
+    
+    # Save to file (for demo, in production this won't persist)
+    import json
+    USERS_FILE = os.path.join(os.path.dirname(__file__), '..', '..', 'users.json')
+    with open(USERS_FILE, 'w') as f:
+        json.dump(users_db, f, indent=2)
+    
+    access_token = create_access_token(data={"sub": new_user['email']})
+    return {"access_token": access_token, "token_type": "bearer"}
 
 @router.get("/me", response_model=UserSchema)
 def get_current_user(current_user: dict = Depends(get_current_active_user)):
