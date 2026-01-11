@@ -8,9 +8,9 @@ app = FastAPI(title="Go Construction API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=["http://localhost:8081", "http://localhost:5173", "http://localhost:3000", "https://goconstructioltd.com"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -22,6 +22,10 @@ app.include_router(company.router, prefix="/company", tags=["company"])
 app.include_router(projects.router, prefix="/projects", tags=["projects"])
 app.include_router(transactions.router, prefix="/transactions", tags=["transactions"])
 app.include_router(contact.router, prefix="/contact", tags=["contact"])
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
 
 @app.on_event("startup")
 def startup_event():
